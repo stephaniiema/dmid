@@ -1,0 +1,74 @@
+<!-- 
+	based off starting code from ChatGPT
+	prompt: "write the html for a basic portfolio web page with at least 15 DOM elements"
+	modifications: - removed "about me" and "contact" sections
+                 - added a home page section with text
+                 - added a dog picture section with text, picture, button
+                 - added divs nested inside each section
+                    (for the background, but not the text, to span the entire width of the page)
+                 - removed copyright footer
+	intent: to get a starting point for the html file;
+          also, to get inspiration for what sections a portfolio site might have
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>stephaniiema</title>
+	<script src="scripts/main.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body id = "body">
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#body">Home</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#dog">&#128054;</a></li>
+			</ul>
+		</nav>
+		<h1>Stephanie Ma</h1>
+	</header>
+	<main>
+		<section id="home">
+			<div>
+				<h2> Social AR/VR Studio </h2>
+				<p> Here is some riveting text about this portfolio website. </p>
+			</div>
+		</section>
+		<section id="projects">
+			<div>
+				<h2>Projects</h2>
+				<article>
+					<a href="./a1.html">Assignment 1</a>
+					<p>An idle game about paying off student debt. </p>
+					<!-- <a href="#">Read More</a> -->
+				</article>
+				<article>
+          <a href="https://chrisbucket-arvr-a2.glitch.me/">Assignment 2</a>
+					<p>A simple jackbox game where 2 players try to type in the same word at the same time. </p>
+					<!-- <a href="#">Read More</a> -->
+				</article>
+				<article>
+          <a href="https://stephaniiema-arvr-a3.glitch.me/">Assignment 3</a>
+					<p>A front-end client for a federated social network.</p>
+					<!-- <a href="#">Read More</a> -->
+				</article>
+			</div>
+		</section>
+        <section id="dog">
+			<div>
+				<h2>Dog Pictures</h2>
+				<p>
+					Here are some cute dog pictures for your enjoyment.
+				</p>
+				<!-- <img id = "dogpic" src="images/dog0.jpg" alt="dog1"> -->
+				<!-- <button onclick="change_pic()"> Another one!! </button> -->
+			</div>
+		</section>
+	</main>
+</body>
+</html>
