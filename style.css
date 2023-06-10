@@ -31,6 +31,7 @@ body {
 
   h2, h3 {
     font-weight: 700;
+    font-size: 36px;
     text-align: center;
   }
 
@@ -94,7 +95,6 @@ body {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    height: 100vh;
   }
   
   section h2 {
@@ -160,6 +160,10 @@ body {
     text-align: center;
   }
 
+  p{
+    font-size: 16px;
+  }
+
 
 /*   span {
     display: flex;
@@ -167,38 +171,77 @@ body {
 
   } */
 
+  #home {
+    height: 80vh;
+
+  }
+
   #home h2 {
     font-size: 6em;
   }
 
-  #projects {
+  #anatomy {
     background-color: #272727;
     /* background-color: #9A8F97; */
     color: #d3f8e2;
     /* color:#a99cd3 */
   }
 
-  #projects a{
+  #anatomy a{
     /* color: #d3f8e2; */
     color:#a99cd3;
     text-decoration: underline;
     font-size:1.17em;
   }
 
-  #projects article{
+  #anatomy article{
     margin: 0 0 40px 0;
   }
 
-  #dog {
+  #anatomy img {
+    margin-top: 100px;
+  }
+
+  #anatomy div{
+    margin:0px;
+    max-width:100vw;
+  }
+
+
+  #inspiration {
     background-color: #d3f8e2;
   }
 
-  #dog button{
+  #inspiration button{
     background-color:transparent;
   }
 
-  #dog button:hover{
+  #inspiration button:hover{
     background-color: #9a8f97;
   }
 
-  
+  #code {
+    background-color: #d3f8e2;
+  }
+
+  #process div{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+  }
+
+  #process p{
+    width: 50vw;
+  }
+
+  #process img{
+    width: 30%;
+    height: auto;
+    margin: 10px 30px;
+  }
+
+  #demo {
+    background-color: #272727;
+    color: #d3f8e2;
+  }

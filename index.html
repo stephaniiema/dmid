@@ -1,20 +1,8 @@
-<!-- 
-	based off starting code from ChatGPT
-	prompt: "write the html for a basic portfolio web page with at least 15 DOM elements"
-	modifications: - removed "about me" and "contact" sections
-                 - added a home page section with text
-                 - added a dog picture section with text, picture, button
-                 - added divs nested inside each section
-                    (for the background, but not the text, to span the entire width of the page)
-                 - removed copyright footer
-	intent: to get a starting point for the html file;
-          also, to get inspiration for what sections a portfolio site might have
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>stephaniiema</title>
+	<title>Bearatone</title>
 	<script src="scripts/main.js"></script>
 	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,8 +14,10 @@
 		<nav>
 			<ul>
 				<li><a href="#body">Home</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#dog">&#128054;</a></li>
+				<li><a href="#anatomy">Anatomy</a></li>
+				<li><a href="#inspiration">Features</a></li>
+				<li><a href="#process">Process</a></li>
+
 			</ul>
 		</nav>
 		<h1>Stephanie Ma</h1>
@@ -35,39 +25,102 @@
 	<main>
 		<section id="home">
 			<div>
-				<h2> Social AR/VR Studio </h2>
-				<p> Here is some riveting text about this portfolio website. </p>
-			</div>
-		</section>
-		<section id="projects">
-			<div>
-				<h2>Projects</h2>
-				<article>
-					<a href="./a1.html">Assignment 1</a>
-					<p>An idle game about paying off student debt. </p>
-					<!-- <a href="#">Read More</a> -->
-				</article>
-				<article>
-          <a href="https://chrisbucket-arvr-a2.glitch.me/">Assignment 2</a>
-					<p>A simple jackbox game where 2 players try to type in the same word at the same time. </p>
-					<!-- <a href="#">Read More</a> -->
-				</article>
-				<article>
-          <a href="https://stephaniiema-arvr-a3.glitch.me/">Assignment 3</a>
-					<p>A front-end client for a federated social network.</p>
-					<!-- <a href="#">Read More</a> -->
-				</article>
-			</div>
-		</section>
-        <section id="dog">
-			<div>
-				<h2>Dog Pictures</h2>
-				<p>
-					Here are some cute dog pictures for your enjoyment.
+				<h2> Bearatone </h2>
+				<p> An instrument for your inner child.</p>
+				<h3>Overview & Inspiration</h3>
+				<p>The Bearatone is a fun whimsical instrument. Made from a teddy bear outfitted with sensors, it's meant to be a amusing interface to engage with music.
+					The Bearatone was created as my final project for Northwestern University's
+					Digital Musical Instrument Design course in Spring 2023.
 				</p>
-				<!-- <img id = "dogpic" src="images/dog0.jpg" alt="dog1"> -->
-				<!-- <button onclick="change_pic()"> Another one!! </button> -->
+				<p> Earlier this quarter, I read excerpts from The Infinite Playground, by Bernie DeKoven. 
+					The author writes about the importance of exercising your imagination, and I realized 
+					that I hadn't thought of being imaginative in a long time. The Bearatone is designed to
+					inspire the kind of imagination we had when playing with stuffed animals as kids.
+				</p>
 			</div>
+		</section>
+		<section id="anatomy">
+			<div>
+				<h2>Anatomy of a Bearatone</h2>
+                <div style="display:flex; flex-direction: row; margin:0; flex-wrap:wrap;">
+                    <img id="anatomyfront"src="images/anatomy_front.jpg" alt="bearatone anatomy">
+                    <img src="images/anatomy_back.jpg" alt="bearatone anatomy back">
+                </div>
+			</div>
+		</section>
+        <section id="inspiration">
+			<div>
+				<h2>Features</h2>
+				<p>The Bearatone can play up to 2 notes at once. One note is the fundamental, with pitch controlled by the softpot,
+					and the other note is variable and can be controlled using the FSRs, photoresistor, and push button.
+				</p>
+				<p style="font-size:20px;">Volume</p>
+				<p>The two arms control the volumes of the two notes. When the left arm is raised, the volume of the fundamental increases,
+					and when the right arm is raised, the volume of the variable note increases.
+				</p>
+				<p style="font-size:20px;">Fundamental Pitch</p>
+				<p>The funamental pitch is controlled by the soft pot.
+				</p>
+				<p style="font-size:20px;">Variable Pitch</p>
+				<p>Each of the remaining 4 sensors (2 FSRS, photoresistor, and push button) are treated like a switch.
+					When a sensor is "activated" (FSR pressed, photoresitor covered, push button pressed), the state of
+					the switch is flipped. Each sensor is mapped to 2 intervals against the fundamental (one for each state).
+					When a switch is flipped, the corresponding interval is activated and the pitch of the variable note changes.
+				</p>
+				<p style="font-size:20px;">Playing and Writing for the Bearatone</p>
+				<p>Because of the unique pitch control for the variable pitch, the Bearatone is a highly idiomatic instrument to compose for.
+					The main constraint is that once a switch is flipped to the "on" interval, and then another switch is activated, the "off"
+					note of the first switch needs to be activated before the "on" note of the second switch can be played again. Because of this
+					constraint, composers should be careful in their writing, or design a pitch mapping along with each piece to ensure that the 
+					mappings are ergonomic.
+				</p>
+			</div>
+		</section>
+		<section id="process">
+			<h2>Process and Construction</h2>
+			<div>
+				<img src="images/fordbear.JPG" alt="teddy bear">
+				<p>First I obtained a sacrificial teddy bear.</p>
+			</div>
+			<div>
+				<p>The bear was cut open and the stuffing removed so 
+					that it could be outfitted with sensors.</p>
+				<img src="images/bearopen.jpg" alt="teddy bear">
+			</div>
+			<div>
+				<img src="images/bearsensors.jpg" alt="teddy bear">
+				<p>Sensors were hot glued or taped to the bear. The FSRs and bend sensors are within the stuffed animal, while
+					the photoresitor and button have parts both inside and outside the bear.
+				</p>
+			</div>
+			<div>
+				<p>The circuits were soldered into a PCB.</p>
+				<img src="images/pcb.jpg" alt="teddy bear">
+			</div>
+			<div>
+				<img src="images/pcbbear.jpg" alt="teddy bear">
+				<p>The PCB was connected to the sensors and placed inside the teddy bear. Sensor inputs, power, and ground were wired
+					out in a central "umbilical" bundle of wires.
+				</p>
+			</div>
+			<div>
+				<p>The teddy bear was sewn up and the soft pot was sewn onto the back of the teddy bear. The sensors, power and ground
+					were connected to the Arduino (which is external to the bear).
+				</p>
+				<img src="images/bear_done.jpg" alt="teddy bear">
+			</div>
+			<p> </p>
+		</section>
+		<section id="demo">
+			<h2>Demo</h2>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/rNzjSei5lAc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<p> </p>
+		</section>
+		<section id="code">
+			<h2>Code & Resources</h2>
+			<p>Arduino and Max Code as well as the pdf score for the demo performance can be found on Github <a href="https://github.com/stephaniiema/dmid" style="text-decoration: underline;">here</a>.</p>
+			<p>Circuit Diagram</p>
+			<img src="images/circuit.jpeg" alt="circuit diagram" style="margin-top: 0;">
 		</section>
 	</main>
 </body>
